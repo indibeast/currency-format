@@ -11,6 +11,7 @@ class CurrencyTest extends \PHPUnit_Framework_TestCase {
         $currency = new Price(1000,'LKR');
 
         $this->assertEquals(1000,$currency->getAmount());
+        $this->assertEquals('LKR',$currency->getCode());
     }
 
     public function test_currency_options()
@@ -27,11 +28,21 @@ class CurrencyTest extends \PHPUnit_Framework_TestCase {
         $this->assertArrayHasKey('sign',$filereader->getFileContent());
     }
 
+    public function test_currency_object()
+    {
+        $currency = new Price(50.09,'LKR');
+        $currencyobj = $currency->getCurrency();
+        $this->assertInstanceOf('\Currency\Currency',$currencyobj);
+        $this->assertEquals('Rs',$currencyobj->getSign());
+        $this->assertEquals('LKR',$currencyobj->getCode());
+        $this->assertEquals('Sri Lankan Rupee',$currencyobj->getTitle());
+    }
+
     public function test_currency_format()
     {
-        $currency = new Price(3000,'USD',['show_decimal' => true,'seperator' => ',']);
+        $currency = new Price(3000.09,'USD',['show_decimal' => true,'seperator' => ',']);
 
-        $this->assertEquals('$ 3,000.00',$currency->pretty());
+        $this->assertEquals('$ 3,000.09',$currency->pretty());
     }
 
 } 

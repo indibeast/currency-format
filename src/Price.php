@@ -32,6 +32,7 @@ class Price {
         $this->amount = $amount;
         $this->code   = $code;
         $this->options = array_merge($this->options,$options);
+        $this->setCurency(new Currency((new Reader($this->code))->getFileContent()));
     }
 
     /**
@@ -77,7 +78,6 @@ class Price {
      */
     public function pretty()
     {
-        $this->setCurency(new Currency((new Reader($this->code))->getFileContent()));
 
         return $this->format();
     }
