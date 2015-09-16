@@ -10,6 +10,7 @@
  $price->pretty();// Rs 3,000.00
 ```
 ##To Dos
+- Add currency converter
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/indibeast/oauth2-human/blob/master/LICENSE) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/indibeast/currency-format/blob/master/LICENSE) for more information.
