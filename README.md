@@ -1,5 +1,5 @@
 # Currency Formatter
-
+[![Build Status](https://travis-ci.org/indibeast/currency-format.svg?branch=master)](https://travis-ci.org/indibeast/currency-format)
 ## Minimum Requirements ##
 
 - PHP 5.5+
