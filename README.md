@@ -1,6 +1,5 @@
 # Currency Formatter
 [![Build Status](https://travis-ci.org/indibeast/currency-format.svg?branch=master)](https://travis-ci.org/indibeast/currency-format)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/indibeast/currency-formatter)
 [![Coverage Status](https://coveralls.io/repos/indibeast/currency-format/badge.svg?branch=master&service=github)](https://coveralls.io/github/indibeast/currency-format?branch=master)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 ## Minimum Requirements ##
