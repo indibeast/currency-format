@@ -18,15 +18,15 @@ composer require indibeast/currency-formatter
 ```
 ## Example
 ```php
- $price = new Currency\Price\Price(3000,'LKR');
+ $price = new Currency\Price(3000,'LKR');
  $price->pretty();// Rs 3,000.00
 ```
  You can pass the options as an array to the third parameter.
  ```php
-  $price = new Currency\Price\Price(3000,'LKR',['show_decimal' => false,'seperator' => ',']);
+  $price = new Currency\Price(3000,'LKR',['show_decimal' => false,'seperator' => ',']);
   $price->pretty();// Rs 3,000
  ```
-## To Dos
+## To Do
 - Add currency converter
 
 ## License
