@@ -1,6 +1,7 @@
 # Currency Formatter
 [![Build Status](https://travis-ci.org/indibeast/currency-format.svg?branch=master)](https://travis-ci.org/indibeast/currency-format)
 [![Coverage Status](https://coveralls.io/repos/indibeast/currency-format/badge.svg?branch=master&service=github)](https://coveralls.io/github/indibeast/currency-format?branch=master)
+[![Code Climate](https://codeclimate.com/github/indibeast/currency-format/badges/gpa.svg)](https://codeclimate.com/github/indibeast/currency-format)
 [![Total Downloads](https://poser.pugx.org/indibeast/currency-formatter/downloads)](https://packagist.org/packages/indibeast/currency-formatter)
 [![Latest Unstable Version](https://poser.pugx.org/indibeast/currency-formatter/v/unstable)](https://packagist.org/packages/indibeast/currency-formatter)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)

@@ -1,8 +1,11 @@
 <?php
 namespace Currency\Test;
 
+use Currency\Converter\FixedConverter;
+use Currency\Converter\OpenExchangeConverter;
 use Currency\Price;
 use Currency\Reader\Reader;
+use Mockery as m;
 
 class CurrencyTest extends \PHPUnit_Framework_TestCase {
 
@@ -14,6 +17,11 @@ class CurrencyTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals('LKR',$currency->getCode());
     }
 
+    public function tearDown()
+    {
+        m::close();
+        parent::tearDown();
+    }
     public function test_currency_options()
     {
         $currency = new Price(2000,'LKR',['show_decimal' => false]);
@@ -44,5 +52,14 @@ class CurrencyTest extends \PHPUnit_Framework_TestCase {
 
         $this->assertEquals('$ 3,000.09',$currency->pretty());
     }
+
+    public function test_currency_convert()
+    {
+        $currency = new Price(1,'USD');
+        $currency->setConverter(new FixedConverter());
+        $this->assertEquals('Rs 1.00',$currency->convert('LKR'));
+    }
+
+    
 
 } 

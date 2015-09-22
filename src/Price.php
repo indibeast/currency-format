@@ -1,6 +1,7 @@
 <?php
 namespace Currency;
 
+use Currency\Converter\ConverterInterface;
 use Currency\Reader\Reader;
 
 class Price {
@@ -16,6 +17,10 @@ class Price {
      * @var \Currency\Currency;
      */
     protected $currency;
+    /**
+     * @var \Currency\Converter\ConverterInterface
+     */
+    protected $converter;
 
     protected $options = [
       'show_decimal' => true,
@@ -130,5 +135,16 @@ class Price {
     protected function getSeperator()
     {
         return $this->options['seperator'];
+    }
+
+    public function setConverter(ConverterInterface $converter)
+    {
+        $this->converter = $converter;
+    }
+
+    public function convert($currency)
+    {
+       return(new self(($this->amount * $this->converter->getConversionRate($this->code,$currency)),$currency))->pretty();
+
     }
 } 
