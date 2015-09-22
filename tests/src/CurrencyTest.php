@@ -41,7 +41,7 @@ class CurrencyTest extends \PHPUnit_Framework_TestCase {
         $currency = new Price(50.09,'LKR');
         $currencyobj = $currency->getCurrency();
         $this->assertInstanceOf('\Currency\Currency',$currencyobj);
-        $this->assertEquals('Rs',$currencyobj->getSign());
+        $this->assertEquals('Rs.',$currencyobj->getSign());
         $this->assertEquals('LKR',$currencyobj->getCode());
         $this->assertEquals('Sri Lankan Rupee',$currencyobj->getTitle());
     }
