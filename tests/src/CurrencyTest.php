@@ -57,7 +57,7 @@ class CurrencyTest extends \PHPUnit_Framework_TestCase {
     {
         $currency = new Price(1,'USD');
         $currency->setConverter(new FixedConverter());
-        $this->assertEquals('Rs 1.00',$currency->convert('LKR'));
+        $this->assertEquals('Rs. 1.00',$currency->convert('LKR'));
     }
 
     
