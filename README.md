@@ -27,9 +27,25 @@ composer require indibeast/currency-formatter
   $price = new Currency\Price(3000,'LKR',['show_decimal' => false,'seperator' => ',']);
   $price->pretty();// Rs 3,000
  ```
-## To Do
-- Add currency converter
+ Currency conversion
+ ```php
+  $currency = new Price(1,'USD');
+  $currency->setConverter(new OpenExchangeConverter('app_id'));// Pass true as second parameter if you are having an enterprise APP_ID.
+  $currency->convert('LKR') // This will convert U.S Dollars to Sri Lankan Rupees
+ ```
+ If you wish to implement your own currency exchange provider implement \Currency\Converter\ConverterInterface
+ ```php
+  class FixedConverter implements ConverterInterface{
 
+     /**
+      * @return float
+      */
+     public function getConversionRate($code,$to)
+     {
+         return 1;
+     }
+  }
+ ```
 ## License
 
 The MIT License (MIT). Please see [License File](https://github.com/indibeast/currency-format/blob/master/LICENSE) for more information.
