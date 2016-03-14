@@ -35,7 +35,8 @@ class Price {
 
     protected $options = [
       'show_decimal' => true,
-      'seperator'    => ','
+      'seperator'    => ',',
+      'show_sign'    => true
     ];
 
     /**
@@ -113,6 +114,9 @@ class Price {
      */
     protected function format()
     {
+        if(!$this->getShowSign()) {
+            return $this->formatAmount();
+        }
         return $this->currency->getSign().' '.$this->formatAmount();
     }
 
@@ -148,6 +152,11 @@ class Price {
         return $this->options['seperator'];
     }
 
+    protected function getShowSign()
+    {
+       return (bool) $this->options['show_sign'];
+    }
+
     public function setConverter(ConverterInterface $converter)
     {
         $this->converter = $converter;
@@ -158,4 +167,6 @@ class Price {
        return(new self(($this->amount * $this->converter->getConversionRate($this->code,$currency)),$currency))->pretty();
 
     }
+
+
 } 
